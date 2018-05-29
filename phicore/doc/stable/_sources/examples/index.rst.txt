@@ -4,6 +4,26 @@ Examples
 ========
 
 
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In thus example we will create a sample phicore HDF5 files then read it back as ``xarray.DataAr...">
+
+.. only:: html
+
+    .. figure:: /examples/images/thumb/sphx_glr_read_write_phicore_hdf5_thumb.png
+
+        :ref:`sphx_glr_examples_read_write_phicore_hdf5.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/read_write_phicore_hdf5
 .. raw:: html
 
     <div style='clear:both'></div>
