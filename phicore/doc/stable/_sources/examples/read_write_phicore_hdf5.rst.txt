@@ -114,7 +114,6 @@ Now we will load this data back,
 
 
 
-
 .. rst-class:: sphx-glr-script-out
 
  Out::
@@ -157,7 +156,7 @@ Now we will load this data back,
         scale_units:  {'x': 'px', 'y': 'px', 'w': 'PHz.rad'}
 
 
-**Total running time of the script:** ( 0 minutes  0.017 seconds)
+**Total running time of the script:** ( 0 minutes  0.025 seconds)
 
 
 
