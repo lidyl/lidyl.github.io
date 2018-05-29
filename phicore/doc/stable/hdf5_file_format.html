@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Phicore data file format &mdash; phicore 0.3.dev0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> phicore
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.dev0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Phicore data file format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#i-hdf5-file-format">I. HDF5 file format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-variables">Data variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadata">Metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-metadata">Node metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#physical-quantities">Physical quantities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#visualization-software">Visualization software</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ii-client-libraries">II. Client libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#python">Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes.html">Release notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">phicore</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Phicore data file format</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/hdf5_file_format.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="phicore-data-file-format">
+<h1>Phicore data file format<a class="headerlink" href="#phicore-data-file-format" title="Permalink to this headline">¶</a></h1>
+<p><em>Version: 2.0</em>, May 25 2018, LIDYL CEA</p>
+<p>This document describes the API of the file format used to store spatio-temporal laser beam profiles.</p>
+<div class="section" id="i-hdf5-file-format">
+<h2>I. HDF5 file format<a class="headerlink" href="#i-hdf5-file-format" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>Hierarchical Data Format (HDF5) is designed to efficiently store large amounts of scientific data.
+A phicore data file, is an HDF5 file with the following structure,</p>
+<div class="code highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">|-</span><span class="n">metadata</span>
+<span class="o">--</span><span class="n">data</span><span class="o">/</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">variable1</span>  <span class="n">int16</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">Nw</span><span class="p">)</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">variable2</span>  <span class="n">float32</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">Nx</span><span class="p">,</span> <span class="n">Ny</span><span class="p">,</span> <span class="n">Nt</span><span class="p">)</span>
+<span class="o">--</span><span class="n">scales</span><span class="o">/</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">variable1_x</span> <span class="n">float64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">Nx</span><span class="p">,)</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">variable1_y</span> <span class="n">float64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">Ny</span><span class="p">,)</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">variable1_w</span> <span class="n">float64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">Nw</span><span class="p">,)</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">variable2_x</span> <span class="n">float64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">Nx</span><span class="p">)</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">variable2_y</span> <span class="n">float64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">Ny</span><span class="p">)</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">variable2_t</span> <span class="n">float64</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">Nt</span><span class="p">)</span>
+   <span class="o">...</span>
+<span class="o">--</span><span class="n">diag</span><span class="o">/</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">reference_image1</span>
+  <span class="o">|</span><span class="n">_</span> <span class="n">reference_image2</span>
+</pre></div>
+</div>
+<p>Thus, phicore files always have at least the following three groups,</p>
+<ul class="simple">
+<li><strong>data</strong> : a group with N-dimensional variables (in this case <cite>variable1</cite> and <cite>variable2</cite>)</li>
+<li><strong>scales</strong> : contains 1D vectors with axis coordinates (time, space, etc) for all variables.
+in the above example, <cite>variable1</cite> is 3D and has <cite>[x, y, w]</cite> coordinates.</li>
+<li><strong>diag</strong> : a group with custom variables. For instance it could contain reference images etc.</li>
+</ul>
+<p>In addition, phicore files store metadata as specified below.</p>
+</div>
+<div class="section" id="data-variables">
+<h3>Data variables<a class="headerlink" href="#data-variables" title="Permalink to this headline">¶</a></h3>
+<p>Data variables in the <code class="docutils literal notranslate"><span class="pre">data/</span></code> group can be 2D or 3D array of integer or float data type.</p>
+<p>Spatial dimensions are the first ones, while the temporal or frequency dimension comes last.</p>
+<p>To save disk usage, individual variables can be stored with
+<a class="reference external" href="https://support.hdfgroup.org/HDF5/faq/compression.html">compression filters</a> including zlib, szip as
+well as blosc and lz4.</p>
+</div>
+<div class="section" id="metadata">
+<h3>Metadata<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h3>
+<p><strong>Root metadata</strong></p>
+<p>The root HDF5 node node must contain at least the following metadata attributes,</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">rev_fileformat</span></code> (_float_): File format revision. Should be equal to <code class="docutils literal notranslate"><span class="pre">3</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">date</span></code> (_string_): “YYYY-MM-DD-HHMMSS”</li>
+</ul>
+</div></blockquote>
+<p>as well as the following optional attributes,</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">operator</span></code> (_string_): Author name</li>
+<li><code class="docutils literal notranslate"><span class="pre">comments</span></code> (_string_): Free format field.</li>
+<li><code class="docutils literal notranslate"><span class="pre">data_source</span></code> (_string_): “simulation” OR “experiment”</li>
+</ul>
+</div></blockquote>
+<p>other attributes can be added as needed.</p>
+</div>
+<div class="section" id="node-metadata">
+<h3>Node metadata<a class="headerlink" href="#node-metadata" title="Permalink to this headline">¶</a></h3>
+<p>Each data variable must store the following metadata attributes,</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">name</span></code> (_string_): the variable name</li>
+<li><code class="docutils literal notranslate"><span class="pre">scales</span></code> (_string_): a list of data coordinates (e.g. <code class="docutils literal notranslate"><span class="pre">['x',</span> <span class="pre">'y',</span> <span class="pre">'w']</span></code>)</li>
+</ul>
+</div></blockquote>
+<p>as well as the following optional attributes,</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">data_source</span></code> (_string_): “simulation” OR “experiment”</li>
+</ul>
+</div></blockquote>
+<dl class="docutils">
+<dt>Each scale/coordinate variable must include the following attributes,</dt>
+<dd><ul class="first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">unit</span></code> (_string_): a string representation of coordinate unit</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="physical-quantities">
+<h3>Physical quantities<a class="headerlink" href="#physical-quantities" title="Permalink to this headline">¶</a></h3>
+<p><strong>Data variable notations</strong></p>
+<p>The variable names are Intensity (<code class="docutils literal notranslate"><span class="pre">I</span></code>), Amplitude (<code class="docutils literal notranslate"><span class="pre">A</span></code>), Complex electric field (<code class="docutils literal notranslate"><span class="pre">E</span></code>) and Phase (<code class="docutils literal notranslate"><span class="pre">ph</span></code>).</p>
+<p><strong>Coordinate notations</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="49%" />
+<col width="34%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Description</th>
+<th class="head">Name</th>
+<th class="head">Units</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Spatial coordinates</td>
+<td><code class="docutils literal notranslate"><span class="pre">x</span></code> or <code class="docutils literal notranslate"><span class="pre">y</span></code></td>
+<td>mm</td>
+</tr>
+<tr class="row-odd"><td>Spatial frequencies</td>
+<td><code class="docutils literal notranslate"><span class="pre">kx</span></code> or <code class="docutils literal notranslate"><span class="pre">ky</span></code></td>
+<td>1/mm</td>
+</tr>
+<tr class="row-even"><td>Time</td>
+<td><code class="docutils literal notranslate"><span class="pre">t</span></code></td>
+<td>fs</td>
+</tr>
+<tr class="row-odd"><td>Optical delay</td>
+<td><code class="docutils literal notranslate"><span class="pre">tau</span></code></td>
+<td>fs</td>
+</tr>
+<tr class="row-even"><td>Optical path difference</td>
+<td><code class="docutils literal notranslate"><span class="pre">d</span></code></td>
+<td>nm</td>
+</tr>
+<tr class="row-odd"><td>Angular frequency</td>
+<td><code class="docutils literal notranslate"><span class="pre">w</span></code></td>
+<td>PHz.rad</td>
+</tr>
+<tr class="row-even"><td>Frequency</td>
+<td><code class="docutils literal notranslate"><span class="pre">f</span></code></td>
+<td>PHz</td>
+</tr>
+<tr class="row-odd"><td>Wavelength</td>
+<td><code class="docutils literal notranslate"><span class="pre">lamb</span></code></td>
+<td>nm</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="visualization-software">
+<h3>Visualization software<a class="headerlink" href="#visualization-software" title="Permalink to this headline">¶</a></h3>
+<p>Visualization software for the phicore data format is developed at LIDYL, CEA.</p>
+<p>Raw data in the HDF5 can be displayed by a variety of HDF5 viewers, including
+<a class="reference external" href="https://github.com/HDFGroup/hdf-compass">HDF Compass</a>,
+<a class="reference external" href="https://www.hdfgroup.org/downloads/hdfview/">HDF view</a> and
+<a class="reference external" href="http://vitables.org/">ViTabes</a>.</p>
+</div>
+</div>
+<div class="section" id="ii-client-libraries">
+<h2>II. Client libraries<a class="headerlink" href="#ii-client-libraries" title="Permalink to this headline">¶</a></h2>
+<p>HDF5 supports client libraries in numerous languages, including Java, MATLAB, Scilab, Octave,
+Mathematica, IDL, Python, R, and Julia however the phicore data format specification for each of these
+still needs to be implemented.</p>
+<p>In the following, we will focus on the Python language.</p>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p><strong>Overview</strong>
+A client library for the phicore data format is implemented at LIDYL, CEA and is available upon request.</p>
+<p>The general approach consists in mapping the HDF5 file structure to labeled N-dimensional array representation
+provided by the <a class="reference external" href="http://xarray.pydata.org/en/stable/index.html">xarray</a> package.</p>
+<p>Each data variable can be represented as an
+<a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.DataArray.html">xarray.DataArray</a>, while the set of all
+data variables corresponds to  <a class="reference external" href="http://xarray.pydata.org/en/stable/generated/xarray.Dataset.html">xarray.Dataset</a>.</p>
+<p><strong>Specification</strong></p>
+<p>Each data variable <code class="docutils literal notranslate"><span class="pre">X</span></code> must be a valid 2D or 3D xarray object
+(see <a class="reference external" href="http://xarray.pydata.org/en/stable/data-structures.html#dataarray">xarray API</a>) and include the following attributes,</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">scale_units</span></code> <em>(dict)</em>: a dictionary mapping dimensions names (<code class="docutils literal notranslate"><span class="pre">X.dims</span></code>) to their units types (str).</li>
+</ul>
+</div></blockquote>
+<p>As a result of the “Physical quantities” section, <code class="docutils literal notranslate"><span class="pre">X.dim</span></code> must be of the form [<code class="docutils literal notranslate"><span class="pre">x|kx</span></code>, <code class="docutils literal notranslate"><span class="pre">y|ky</span></code>, <code class="docutils literal notranslate"><span class="pre">lamb|w|f|tau|d</span></code>], while
+<code class="docutils literal notranslate"><span class="pre">X.coords</span></code> must be a dict-like object with these same keys.</p>
+<p><strong>Example</strong></p>
+<p>A data variable <code class="docutils literal notranslate"><span class="pre">X</span></code> represented as an <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code> can be saved to disk with,</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, LIDYL CEA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.3.dev0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

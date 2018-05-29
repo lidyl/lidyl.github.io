@@ -1,0 +1,440 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>phicore.io.PhiDataFile &mdash; phicore 0.3.dev0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Release notes" href="../release-notes.html" />
+    <link rel="prev" title="API Reference" href="../api.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> phicore
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3.dev0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hdf5_file_format.html">Phicore data file format</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">phicore.io.PhiDataFile</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes.html">Release notes</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">phicore</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api.html">API Reference</a> &raquo;</li>
+        
+      <li>phicore.io.PhiDataFile</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/generated/phicore.io.PhiDataFile.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="phicore-io-phidatafile">
+<h1>phicore.io.PhiDataFile<a class="headerlink" href="#phicore-io-phidatafile" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="phicore.io.PhiDataFile">
+<em class="property">class </em><code class="descclassname">phicore.io.</code><code class="descname">PhiDataFile</code><span class="sig-paren">(</span><em>fullpath</em>, <em>mode='r'</em>, <em>force=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L14"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="phicore.io.PhiDataFile.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>fullpath</em>, <em>mode='r'</em>, <em>force=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L15"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the structure of some archived data and methods
+associated to Input and Output.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fullpath</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – path to the file. If the full path contains the token “{date}” it
+will be replaced by the current date</li>
+<li><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – the mode in which to open the file see documentation of <cite>open</cite></li>
+<li><strong>force</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – overwrite a file even if it exists</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.__init__" title="phicore.io.PhiDataFile.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(fullpath[,&nbsp;mode,&nbsp;force])</td>
+<td>Defines the structure of some archived data and methods associated to Input and Output.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.create_dataset" title="phicore.io.PhiDataFile.create_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_dataset</span></code></a>(name,&nbsp;data[,&nbsp;fletcher32,&nbsp;…])</td>
+<td>Create a new dataset see h5py.Group.create_dataset</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.create_group" title="phicore.io.PhiDataFile.create_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_group</span></code></a>(name[,&nbsp;location])</td>
+<td>Create a new dataset see h5py.Group.create_group</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.get_attrs" title="phicore.io.PhiDataFile.get_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attrs</span></code></a>([location])</td>
+<td>Returns all attrs in specified location, as a dict.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.list_xarray" title="phicore.io.PhiDataFile.list_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_xarray</span></code></a>([location])</td>
+<td>List valid xarrays in designated folder.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.open" title="phicore.io.PhiDataFile.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>([mode,&nbsp;backend,&nbsp;filters])</td>
+<td>Open the hdf5 file</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.read_xarray" title="phicore.io.PhiDataFile.read_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_xarray</span></code></a>(location[,&nbsp;index,&nbsp;chunks])</td>
+<td>Read an xarray from hdf5</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.write_attrs" title="phicore.io.PhiDataFile.write_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_attrs</span></code></a>(attrs[,&nbsp;location])</td>
+<td>Write attributes to a h5 node</td>
+</tr>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.write_xarray" title="phicore.io.PhiDataFile.write_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_xarray</span></code></a>(data[,&nbsp;location,&nbsp;chunks,&nbsp;…])</td>
+<td>Write an xarray to hdf5</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="phicore.io.PhiDataFile.create_dataset">
+<code class="descname">create_dataset</code><span class="sig-paren">(</span><em>name</em>, <em>data</em>, <em>fletcher32=True</em>, <em>complib='blosc:lz4'</em>, <em>complevel=0</em>, <em>chunks=None</em>, <em>backend='pytables'</em>, <em>**args</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L110"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.create_dataset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new dataset see h5py.Group.create_dataset</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>args</strong> (<em>kwargs</em>) – see keyword arguments from h5py.Group.create_dataset</li>
+<li><strong>fletcher32</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – use fletcher32 checksums</li>
+<li><strong>complib</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – compression library to use (see pytables.Filters)</li>
+<li><strong>complevel</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – the compression level (see pytables.Filters)</li>
+<li><strong>chunks</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – chunk shape, to enable auto-chunking set to True or None
+with h5py, or to None with Pytables</li>
+<li><strong>backend</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – the backend to use</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="phicore.io.PhiDataFile.create_group">
+<code class="descname">create_group</code><span class="sig-paren">(</span><em>name</em>, <em>location=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L101"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.create_group" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new dataset see h5py.Group.create_group</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="phicore.io.PhiDataFile.get_attrs">
+<code class="descname">get_attrs</code><span class="sig-paren">(</span><em>location=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L176"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.get_attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all attrs in specified location, as a dict.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – location path inside the hdf5 file. If None, get_attrs returns
+head attributes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="phicore.io.PhiDataFile.list_xarray">
+<code class="descname">list_xarray</code><span class="sig-paren">(</span><em>location='/data/'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L195"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.list_xarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>List valid xarrays in designated folder. Returns full path.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – Where to look for xarrays. Default if not specified is “/data/”</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="phicore.io.PhiDataFile.open">
+<code class="descname">open</code><span class="sig-paren">(</span><em>mode=None</em>, <em>backend='h5py'</em>, <em>filters=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L55"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open the hdf5 file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mode</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – mode in which to open the file. By default,
+use the mode setting provided at initialization</li>
+<li><strong>backend</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – hdf5 backend to use {“h5py”, “pytables”}</li>
+<li><strong>filter</strong> (<em>obj</em>) – An instance of the Filters class (for compression, etc)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="phicore.io.PhiDataFile.read_xarray">
+<code class="descname">read_xarray</code><span class="sig-paren">(</span><em>location</em>, <em>index=()</em>, <em>chunks=()</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L280"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.read_xarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read an xarray from hdf5</p>
+<p>Only one of <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">chunks</span></code> can be provided at a time.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – path in the hdf5 file</li>
+<li><strong>index</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#tuple" title="(in Python v3.6)"><em>tuple</em></a>) – tuple of slices specifying the subset of the dataset to load</li>
+<li><strong>chunks</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#tuple" title="(in Python v3.6)"><em>tuple</em></a><em>, </em><em>optional</em>) – If chunks is provided, it is used to load the new dataset into dask
+arrays. chunks=() loads the dataset with dask using a single
+chunk for all arrays.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="phicore.io.PhiDataFile.write_attrs">
+<code class="descname">write_attrs</code><span class="sig-paren">(</span><em>attrs</em>, <em>location=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L155"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.write_attrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write attributes to a h5 node</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – location path inside the hdf5</li>
+<li><strong>data</strong> (<em>xarray.DataArray</em>) – the data to save</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="phicore.io.PhiDataFile.write_xarray">
+<code class="descname">write_xarray</code><span class="sig-paren">(</span><em>data</em>, <em>location='/data/'</em>, <em>chunks=None</em>, <em>backend='pytables'</em>, <em>complib='blosc:lz4'</em>, <em>complevel=0</em>, <em>**args</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/12a3b1b/phicore/io.py#L217"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.write_xarray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write an xarray to hdf5</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>xarray.DataArray</em>) – the data to save</li>
+<li><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – path in the hdf5 file in which to save</li>
+<li><strong>args</strong> (<em>kwargs</em>) – other keyword arguments to pass to h5py.Group.create_array</li>
+<li><strong>fletcher32</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – use fletcher32 checksums</li>
+<li><strong>complib</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – compression library to use (see pytables.Filters)</li>
+<li><strong>complevel</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – the compression level (see pytables.Filters)</li>
+<li><strong>chunks</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/functions.html#bool" title="(in Python v3.6)"><em>bool</em></a>) – chunk shape, to enable auto-chunking set to True or None
+with h5py, or to None with Pytables</li>
+<li><strong>backend</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – the backend to use</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../release-notes.html" class="btn btn-neutral float-right" title="Release notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api.html" class="btn btn-neutral" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, LIDYL CEA.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.3.dev0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

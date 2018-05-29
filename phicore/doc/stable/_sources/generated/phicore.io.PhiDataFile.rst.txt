@@ -1,0 +1,30 @@
+phicore.io.PhiDataFile
+======================
+
+.. currentmodule:: phicore.io
+
+.. autoclass:: PhiDataFile
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~PhiDataFile.__init__
+      ~PhiDataFile.create_dataset
+      ~PhiDataFile.create_group
+      ~PhiDataFile.get_attrs
+      ~PhiDataFile.list_xarray
+      ~PhiDataFile.open
+      ~PhiDataFile.read_xarray
+      ~PhiDataFile.write_attrs
+      ~PhiDataFile.write_xarray
+   
+   
+
+   
+   
+   
