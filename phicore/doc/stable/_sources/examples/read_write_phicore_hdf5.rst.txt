@@ -1,4 +1,8 @@
+.. note::
+    :class: sphx-glr-download-link-note
 
+    Click :ref:`here <sphx_glr_download_examples_read_write_phicore_hdf5.py>` to download the full example code
+.. rst-class:: sphx-glr-example-title
 
 .. _sphx_glr_examples_read_write_phicore_hdf5.py:
 
@@ -56,7 +60,9 @@ The ``xarray.DataArray`` that we will use as an example, is as follows,
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     <xarray.DataArray 'X' (x: 5, y: 5, w: 3)>
     array([[[0.37454 , 0.950714, 0.731994],
@@ -116,7 +122,9 @@ Now we will load this data back,
 
 .. rst-class:: sphx-glr-script-out
 
- Out::
+ Out:
+
+ .. code-block:: none
 
     <xarray.DataArray 'X' (x: 5, y: 5, w: 3)>
     array([[[0.37454 , 0.950714, 0.731994],
@@ -156,13 +164,17 @@ Now we will load this data back,
         scale_units:  {'x': 'px', 'y': 'px', 'w': 'PHz.rad'}
 
 
-**Total running time of the script:** ( 0 minutes  0.025 seconds)
+**Total running time of the script:** ( 0 minutes  0.014 seconds)
 
+
+.. _sphx_glr_download_examples_read_write_phicore_hdf5.py:
 
 
 .. only :: html
 
  .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-example
+
 
 
   .. container:: sphx-glr-download

@@ -24,8 +24,7 @@
 
   
 
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../_static/gallery.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -161,7 +160,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="creating-and-reading-phicore-hdf5-files">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-examples-read-write-phicore-hdf5-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="creating-and-reading-phicore-hdf5-files">
 <span id="sphx-glr-examples-read-write-phicore-hdf5-py"></span><h1>Creating and reading phicore HDF5 files<a class="headerlink" href="#creating-and-reading-phicore-hdf5-files" title="Permalink to this headline">¶</a></h1>
 <p>In thus example we will create a sample phicore HDF5 files then read
 it back as <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code></p>
@@ -192,42 +195,42 @@ it back as <code class="docutils literal notranslate"><span class="pre">xarray.D
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span> <span class="s1">&#39;X&#39;</span> <span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span>
-<span class="n">array</span><span class="p">([[[</span><span class="mf">0.37454</span> <span class="p">,</span> <span class="mf">0.950714</span><span class="p">,</span> <span class="mf">0.731994</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.598658</span><span class="p">,</span> <span class="mf">0.156019</span><span class="p">,</span> <span class="mf">0.155995</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.058084</span><span class="p">,</span> <span class="mf">0.866176</span><span class="p">,</span> <span class="mf">0.601115</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.708073</span><span class="p">,</span> <span class="mf">0.020584</span><span class="p">,</span> <span class="mf">0.96991</span> <span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.832443</span><span class="p">,</span> <span class="mf">0.212339</span><span class="p">,</span> <span class="mf">0.181825</span><span class="p">]],</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;xarray.DataArray &#39;X&#39; (x: 5, y: 5, w: 3)&gt;
+array([[[0.37454 , 0.950714, 0.731994],
+        [0.598658, 0.156019, 0.155995],
+        [0.058084, 0.866176, 0.601115],
+        [0.708073, 0.020584, 0.96991 ],
+        [0.832443, 0.212339, 0.181825]],
 
-       <span class="p">[[</span><span class="mf">0.183405</span><span class="p">,</span> <span class="mf">0.304242</span><span class="p">,</span> <span class="mf">0.524756</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.431945</span><span class="p">,</span> <span class="mf">0.291229</span><span class="p">,</span> <span class="mf">0.611853</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.139494</span><span class="p">,</span> <span class="mf">0.292145</span><span class="p">,</span> <span class="mf">0.366362</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.45607</span> <span class="p">,</span> <span class="mf">0.785176</span><span class="p">,</span> <span class="mf">0.199674</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.514234</span><span class="p">,</span> <span class="mf">0.592415</span><span class="p">,</span> <span class="mf">0.04645</span> <span class="p">]],</span>
+       [[0.183405, 0.304242, 0.524756],
+        [0.431945, 0.291229, 0.611853],
+        [0.139494, 0.292145, 0.366362],
+        [0.45607 , 0.785176, 0.199674],
+        [0.514234, 0.592415, 0.04645 ]],
 
-       <span class="p">[[</span><span class="mf">0.607545</span><span class="p">,</span> <span class="mf">0.170524</span><span class="p">,</span> <span class="mf">0.065052</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.948886</span><span class="p">,</span> <span class="mf">0.965632</span><span class="p">,</span> <span class="mf">0.808397</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.304614</span><span class="p">,</span> <span class="mf">0.097672</span><span class="p">,</span> <span class="mf">0.684233</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.440152</span><span class="p">,</span> <span class="mf">0.122038</span><span class="p">,</span> <span class="mf">0.495177</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.034389</span><span class="p">,</span> <span class="mf">0.90932</span> <span class="p">,</span> <span class="mf">0.25878</span> <span class="p">]],</span>
+       [[0.607545, 0.170524, 0.065052],
+        [0.948886, 0.965632, 0.808397],
+        [0.304614, 0.097672, 0.684233],
+        [0.440152, 0.122038, 0.495177],
+        [0.034389, 0.90932 , 0.25878 ]],
 
-       <span class="p">[[</span><span class="mf">0.662522</span><span class="p">,</span> <span class="mf">0.311711</span><span class="p">,</span> <span class="mf">0.520068</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.54671</span> <span class="p">,</span> <span class="mf">0.184854</span><span class="p">,</span> <span class="mf">0.969585</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.775133</span><span class="p">,</span> <span class="mf">0.939499</span><span class="p">,</span> <span class="mf">0.894827</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.5979</span>  <span class="p">,</span> <span class="mf">0.921874</span><span class="p">,</span> <span class="mf">0.088493</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.195983</span><span class="p">,</span> <span class="mf">0.045227</span><span class="p">,</span> <span class="mf">0.32533</span> <span class="p">]],</span>
+       [[0.662522, 0.311711, 0.520068],
+        [0.54671 , 0.184854, 0.969585],
+        [0.775133, 0.939499, 0.894827],
+        [0.5979  , 0.921874, 0.088493],
+        [0.195983, 0.045227, 0.32533 ]],
 
-       <span class="p">[[</span><span class="mf">0.388677</span><span class="p">,</span> <span class="mf">0.271349</span><span class="p">,</span> <span class="mf">0.828738</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.356753</span><span class="p">,</span> <span class="mf">0.280935</span><span class="p">,</span> <span class="mf">0.542696</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.140924</span><span class="p">,</span> <span class="mf">0.802197</span><span class="p">,</span> <span class="mf">0.074551</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.986887</span><span class="p">,</span> <span class="mf">0.772245</span><span class="p">,</span> <span class="mf">0.198716</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.005522</span><span class="p">,</span> <span class="mf">0.815461</span><span class="p">,</span> <span class="mf">0.706857</span><span class="p">]]])</span>
-<span class="n">Coordinates</span><span class="p">:</span>
-  <span class="o">*</span> <span class="n">x</span>        <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">int64</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
-  <span class="o">*</span> <span class="n">y</span>        <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="n">int64</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
-  <span class="o">*</span> <span class="n">w</span>        <span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">2.3</span> <span class="mf">2.4</span> <span class="mf">2.5</span>
-<span class="n">Attributes</span><span class="p">:</span>
-    <span class="n">scale_units</span><span class="p">:</span>  <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;px&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;px&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;PHz.rad&#39;</span><span class="p">}</span>
+       [[0.388677, 0.271349, 0.828738],
+        [0.356753, 0.280935, 0.542696],
+        [0.140924, 0.802197, 0.074551],
+        [0.986887, 0.772245, 0.198716],
+        [0.005522, 0.815461, 0.706857]]])
+Coordinates:
+  * x        (x) int64 0 1 2 3 4
+  * y        (y) int64 0 1 2 3 4
+  * w        (w) float64 2.3 2.4 2.5
+Attributes:
+    scale_units:  {&#39;x&#39;: &#39;px&#39;, &#39;y&#39;: &#39;px&#39;, &#39;w&#39;: &#39;PHz.rad&#39;}
 </pre></div>
 </div>
 <p>Now we will load this data back,</p>
@@ -240,50 +243,50 @@ it back as <code class="docutils literal notranslate"><span class="pre">xarray.D
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">xarray</span><span class="o">.</span><span class="n">DataArray</span> <span class="s1">&#39;X&#39;</span> <span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="n">w</span><span class="p">:</span> <span class="mi">3</span><span class="p">)</span><span class="o">&gt;</span>
-<span class="n">array</span><span class="p">([[[</span><span class="mf">0.37454</span> <span class="p">,</span> <span class="mf">0.950714</span><span class="p">,</span> <span class="mf">0.731994</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.598658</span><span class="p">,</span> <span class="mf">0.156019</span><span class="p">,</span> <span class="mf">0.155995</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.058084</span><span class="p">,</span> <span class="mf">0.866176</span><span class="p">,</span> <span class="mf">0.601115</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.708073</span><span class="p">,</span> <span class="mf">0.020584</span><span class="p">,</span> <span class="mf">0.96991</span> <span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.832443</span><span class="p">,</span> <span class="mf">0.212339</span><span class="p">,</span> <span class="mf">0.181825</span><span class="p">]],</span>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;xarray.DataArray &#39;X&#39; (x: 5, y: 5, w: 3)&gt;
+array([[[0.37454 , 0.950714, 0.731994],
+        [0.598658, 0.156019, 0.155995],
+        [0.058084, 0.866176, 0.601115],
+        [0.708073, 0.020584, 0.96991 ],
+        [0.832443, 0.212339, 0.181825]],
 
-       <span class="p">[[</span><span class="mf">0.183405</span><span class="p">,</span> <span class="mf">0.304242</span><span class="p">,</span> <span class="mf">0.524756</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.431945</span><span class="p">,</span> <span class="mf">0.291229</span><span class="p">,</span> <span class="mf">0.611853</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.139494</span><span class="p">,</span> <span class="mf">0.292145</span><span class="p">,</span> <span class="mf">0.366362</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.45607</span> <span class="p">,</span> <span class="mf">0.785176</span><span class="p">,</span> <span class="mf">0.199674</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.514234</span><span class="p">,</span> <span class="mf">0.592415</span><span class="p">,</span> <span class="mf">0.04645</span> <span class="p">]],</span>
+       [[0.183405, 0.304242, 0.524756],
+        [0.431945, 0.291229, 0.611853],
+        [0.139494, 0.292145, 0.366362],
+        [0.45607 , 0.785176, 0.199674],
+        [0.514234, 0.592415, 0.04645 ]],
 
-       <span class="p">[[</span><span class="mf">0.607545</span><span class="p">,</span> <span class="mf">0.170524</span><span class="p">,</span> <span class="mf">0.065052</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.948886</span><span class="p">,</span> <span class="mf">0.965632</span><span class="p">,</span> <span class="mf">0.808397</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.304614</span><span class="p">,</span> <span class="mf">0.097672</span><span class="p">,</span> <span class="mf">0.684233</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.440152</span><span class="p">,</span> <span class="mf">0.122038</span><span class="p">,</span> <span class="mf">0.495177</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.034389</span><span class="p">,</span> <span class="mf">0.90932</span> <span class="p">,</span> <span class="mf">0.25878</span> <span class="p">]],</span>
+       [[0.607545, 0.170524, 0.065052],
+        [0.948886, 0.965632, 0.808397],
+        [0.304614, 0.097672, 0.684233],
+        [0.440152, 0.122038, 0.495177],
+        [0.034389, 0.90932 , 0.25878 ]],
 
-       <span class="p">[[</span><span class="mf">0.662522</span><span class="p">,</span> <span class="mf">0.311711</span><span class="p">,</span> <span class="mf">0.520068</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.54671</span> <span class="p">,</span> <span class="mf">0.184854</span><span class="p">,</span> <span class="mf">0.969585</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.775133</span><span class="p">,</span> <span class="mf">0.939499</span><span class="p">,</span> <span class="mf">0.894827</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.5979</span>  <span class="p">,</span> <span class="mf">0.921874</span><span class="p">,</span> <span class="mf">0.088493</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.195983</span><span class="p">,</span> <span class="mf">0.045227</span><span class="p">,</span> <span class="mf">0.32533</span> <span class="p">]],</span>
+       [[0.662522, 0.311711, 0.520068],
+        [0.54671 , 0.184854, 0.969585],
+        [0.775133, 0.939499, 0.894827],
+        [0.5979  , 0.921874, 0.088493],
+        [0.195983, 0.045227, 0.32533 ]],
 
-       <span class="p">[[</span><span class="mf">0.388677</span><span class="p">,</span> <span class="mf">0.271349</span><span class="p">,</span> <span class="mf">0.828738</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.356753</span><span class="p">,</span> <span class="mf">0.280935</span><span class="p">,</span> <span class="mf">0.542696</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.140924</span><span class="p">,</span> <span class="mf">0.802197</span><span class="p">,</span> <span class="mf">0.074551</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.986887</span><span class="p">,</span> <span class="mf">0.772245</span><span class="p">,</span> <span class="mf">0.198716</span><span class="p">],</span>
-        <span class="p">[</span><span class="mf">0.005522</span><span class="p">,</span> <span class="mf">0.815461</span><span class="p">,</span> <span class="mf">0.706857</span><span class="p">]]])</span>
-<span class="n">Coordinates</span><span class="p">:</span>
-  <span class="o">*</span> <span class="n">x</span>        <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="n">int64</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
-  <span class="o">*</span> <span class="n">y</span>        <span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="n">int64</span> <span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span>
-  <span class="o">*</span> <span class="n">w</span>        <span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="n">float64</span> <span class="mf">2.3</span> <span class="mf">2.4</span> <span class="mf">2.5</span>
-<span class="n">Attributes</span><span class="p">:</span>
-    <span class="n">scale_units</span><span class="p">:</span>  <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span> <span class="s1">&#39;px&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span> <span class="s1">&#39;px&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">:</span> <span class="s1">&#39;PHz.rad&#39;</span><span class="p">}</span>
+       [[0.388677, 0.271349, 0.828738],
+        [0.356753, 0.280935, 0.542696],
+        [0.140924, 0.802197, 0.074551],
+        [0.986887, 0.772245, 0.198716],
+        [0.005522, 0.815461, 0.706857]]])
+Coordinates:
+  * x        (x) int64 0 1 2 3 4
+  * y        (y) int64 0 1 2 3 4
+  * w        (w) float64 2.3 2.4 2.5
+Attributes:
+    scale_units:  {&#39;x&#39;: &#39;px&#39;, &#39;y&#39;: &#39;px&#39;, &#39;w&#39;: &#39;PHz.rad&#39;}
 </pre></div>
 </div>
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.025 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.014 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-read-write-phicore-hdf5-py">
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../_downloads/read_write_phicore_hdf5.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">read_write_phicore_hdf5.py</span></code></a></div>
+<a class="reference download internal" download="" href="../_downloads/beffa1894c4fd8cb6ecf99d92d1a79df/read_write_phicore_hdf5.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">read_write_phicore_hdf5.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
-<a class="reference download internal" href="../_downloads/read_write_phicore_hdf5.ipynb" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">read_write_phicore_hdf5.ipynb</span></code></a></div>
+<a class="reference download internal" download="" href="../_downloads/7ecce5b63359bda8cab926ccf31f18ca/read_write_phicore_hdf5.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">read_write_phicore_hdf5.ipynb</span></code></a></div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.readthedocs.io">Gallery generated by Sphinx-Gallery</a></p>
 </div>
@@ -308,7 +311,7 @@ it back as <code class="docutils literal notranslate"><span class="pre">xarray.D
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2018, LIDYL CEA.
+        &copy; Copyright 2018, LIDYL CEA
 
     </p>
   </div>
@@ -327,28 +330,18 @@ it back as <code class="docutils literal notranslate"><span class="pre">xarray.D
 
   
 
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'0.3.dev0',
-            LANGUAGE:'None',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true,
-            SOURCELINK_SUFFIX: '.txt'
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
   <script type="text/javascript">
       jQuery(function () {
