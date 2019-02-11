@@ -164,7 +164,7 @@ Now we will load this data back,
         scale_units:  {'x': 'px', 'y': 'px', 'w': 'PHz.rad'}
 
 
-**Total running time of the script:** ( 0 minutes  0.243 seconds)
+**Total running time of the script:** ( 0 minutes  0.295 seconds)
 
 
 .. _sphx_glr_download_examples_read_write_phicore_hdf5.py:

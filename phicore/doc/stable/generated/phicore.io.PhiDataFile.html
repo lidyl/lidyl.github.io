@@ -164,10 +164,10 @@
 <h1>phicore.io.PhiDataFile<a class="headerlink" href="#phicore-io-phidatafile" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="phicore.io.PhiDataFile">
-<em class="property">class </em><code class="descclassname">phicore.io.</code><code class="descname">PhiDataFile</code><span class="sig-paren">(</span><em>fullpath</em>, <em>mode='r'</em>, <em>force=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L14"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">phicore.io.</code><code class="descname">PhiDataFile</code><span class="sig-paren">(</span><em>fullpath: str</em>, <em>mode: str = 'r'</em>, <em>force: bool = False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L16"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="method">
 <dt id="phicore.io.PhiDataFile.__init__">
-<code class="descname">__init__</code><span class="sig-paren">(</span><em>fullpath</em>, <em>mode='r'</em>, <em>force=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L15"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>fullpath: str</em>, <em>mode: str = 'r'</em>, <em>force: bool = False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L17"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines the structure of some archived data and methods
 associated to Input and Output.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -193,38 +193,38 @@ will be replaced by the current date</li>
 <col width="90%" />
 </colgroup>
 <tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.__init__" title="phicore.io.PhiDataFile.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(fullpath[,&nbsp;mode,&nbsp;force])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.__init__" title="phicore.io.PhiDataFile.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(fullpath,&nbsp;mode,&nbsp;force)</td>
 <td>Defines the structure of some archived data and methods associated to Input and Output.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.create_dataset" title="phicore.io.PhiDataFile.create_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_dataset</span></code></a>(name,&nbsp;data[,&nbsp;fletcher32,&nbsp;…])</td>
+<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.create_dataset" title="phicore.io.PhiDataFile.create_dataset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_dataset</span></code></a>(name,&nbsp;data,&nbsp;fletcher32,&nbsp;…)</td>
 <td>Create a new dataset see h5py.Group.create_dataset</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.create_group" title="phicore.io.PhiDataFile.create_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_group</span></code></a>(name[,&nbsp;location])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.create_group" title="phicore.io.PhiDataFile.create_group"><code class="xref py py-obj docutils literal notranslate"><span class="pre">create_group</span></code></a>(name,&nbsp;location)</td>
 <td>Create a new dataset see h5py.Group.create_group</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.get_attrs" title="phicore.io.PhiDataFile.get_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attrs</span></code></a>([location])</td>
+<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.get_attrs" title="phicore.io.PhiDataFile.get_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_attrs</span></code></a>(location)</td>
 <td>Returns all attrs in specified location, as a dict.</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.list_xarray" title="phicore.io.PhiDataFile.list_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_xarray</span></code></a>([location])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.list_xarray" title="phicore.io.PhiDataFile.list_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list_xarray</span></code></a>(location)</td>
 <td>List valid xarrays in designated folder.</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.open" title="phicore.io.PhiDataFile.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>([mode,&nbsp;backend,&nbsp;filters])</td>
+<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.open" title="phicore.io.PhiDataFile.open"><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code></a>(mode,&nbsp;backend[,&nbsp;filters])</td>
 <td>Open the hdf5 file</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.read_xarray" title="phicore.io.PhiDataFile.read_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_xarray</span></code></a>(location[,&nbsp;index,&nbsp;chunks,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.read_xarray" title="phicore.io.PhiDataFile.read_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">read_xarray</span></code></a>(location,&nbsp;index,&nbsp;…]&nbsp;=&nbsp;(),&nbsp;…)</td>
 <td>Read an xarray from hdf5</td>
 </tr>
-<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.write_attrs" title="phicore.io.PhiDataFile.write_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_attrs</span></code></a>(attrs[,&nbsp;location])</td>
+<tr class="row-even"><td><a class="reference internal" href="#phicore.io.PhiDataFile.write_attrs" title="phicore.io.PhiDataFile.write_attrs"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_attrs</span></code></a>(attrs,&nbsp;location)</td>
 <td>Write attributes to a h5 node</td>
 </tr>
-<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.write_xarray" title="phicore.io.PhiDataFile.write_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_xarray</span></code></a>(data[,&nbsp;location,&nbsp;chunks,&nbsp;…])</td>
+<tr class="row-odd"><td><a class="reference internal" href="#phicore.io.PhiDataFile.write_xarray" title="phicore.io.PhiDataFile.write_xarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">write_xarray</span></code></a>(data,&nbsp;location,&nbsp;chunks,&nbsp;…)</td>
 <td>Write an xarray to hdf5</td>
 </tr>
 </tbody>
 </table>
 <dl class="method">
 <dt id="phicore.io.PhiDataFile.create_dataset">
-<code class="descname">create_dataset</code><span class="sig-paren">(</span><em>name</em>, <em>data</em>, <em>fletcher32=True</em>, <em>complib='blosc:lz4'</em>, <em>complevel=0</em>, <em>chunks=None</em>, <em>backend='pytables'</em>, <em>**args</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L113"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.create_dataset" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_dataset</code><span class="sig-paren">(</span><em>name: str</em>, <em>data</em>, <em>fletcher32: bool = True</em>, <em>complib: str = 'blosc:lz4'</em>, <em>complevel: int = 0</em>, <em>chunks: bool = None</em>, <em>backend: str = 'pytables'</em>, <em>**args</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L116"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.create_dataset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new dataset see h5py.Group.create_dataset</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -247,13 +247,13 @@ with h5py, or to None with Pytables</li>
 
 <dl class="method">
 <dt id="phicore.io.PhiDataFile.create_group">
-<code class="descname">create_group</code><span class="sig-paren">(</span><em>name</em>, <em>location=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L104"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.create_group" title="Permalink to this definition">¶</a></dt>
+<code class="descname">create_group</code><span class="sig-paren">(</span><em>name: str</em>, <em>location: Optional[str] = None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L107"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.create_group" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new dataset see h5py.Group.create_group</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="phicore.io.PhiDataFile.get_attrs">
-<code class="descname">get_attrs</code><span class="sig-paren">(</span><em>location=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L180"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.get_attrs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">get_attrs</code><span class="sig-paren">(</span><em>location: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; Dict[str, Any]<a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L191"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.get_attrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns all attrs in specified location, as a dict.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -268,7 +268,7 @@ head attributes.</td>
 
 <dl class="method">
 <dt id="phicore.io.PhiDataFile.list_xarray">
-<code class="descname">list_xarray</code><span class="sig-paren">(</span><em>location='/data/'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L199"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.list_xarray" title="Permalink to this definition">¶</a></dt>
+<code class="descname">list_xarray</code><span class="sig-paren">(</span><em>location: str = '/data/'</em><span class="sig-paren">)</span> &#x2192; List[str]<a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L211"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.list_xarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>List valid xarrays in designated folder. Returns full path.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -282,7 +282,7 @@ head attributes.</td>
 
 <dl class="method">
 <dt id="phicore.io.PhiDataFile.open">
-<code class="descname">open</code><span class="sig-paren">(</span><em>mode=None</em>, <em>backend='h5py'</em>, <em>filters=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L55"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.open" title="Permalink to this definition">¶</a></dt>
+<code class="descname">open</code><span class="sig-paren">(</span><em>mode: Optional[str] = None</em>, <em>backend: str = 'h5py'</em>, <em>filters=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L57"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.open" title="Permalink to this definition">¶</a></dt>
 <dd><p>Open the hdf5 file</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -302,7 +302,7 @@ use the mode setting provided at initialization</li>
 
 <dl class="method">
 <dt id="phicore.io.PhiDataFile.read_xarray">
-<code class="descname">read_xarray</code><span class="sig-paren">(</span><em>location</em>, <em>index=()</em>, <em>chunks=()</em>, <em>backend='h5py'</em>, <em>mmap=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L294"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.read_xarray" title="Permalink to this definition">¶</a></dt>
+<code class="descname">read_xarray</code><span class="sig-paren">(</span><em>location: str</em>, <em>index: Tuple[int</em>, <em>...] = ()</em>, <em>chunks: Tuple[int</em>, <em>...] = ()</em>, <em>backend: str = 'h5py'</em>, <em>mmap: bool = False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L311"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.read_xarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read an xarray from hdf5</p>
 <p>Only one of <code class="docutils literal notranslate"><span class="pre">index</span></code>, <code class="docutils literal notranslate"><span class="pre">chunks</span></code> can be provided at a time.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -342,15 +342,15 @@ with the same fields otherwise</p>
 
 <dl class="method">
 <dt id="phicore.io.PhiDataFile.write_attrs">
-<code class="descname">write_attrs</code><span class="sig-paren">(</span><em>attrs</em>, <em>location=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L159"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.write_attrs" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_attrs</code><span class="sig-paren">(</span><em>attrs: dict</em>, <em>location: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L169"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.write_attrs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write attributes to a h5 node</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>attrs</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#dict" title="(in Python v3.6)"><em>dict</em></a>) – the attributes to set</li>
 <li><strong>location</strong> (<a class="reference external" href="https://docs.python.org/3.6/library/stdtypes.html#str" title="(in Python v3.6)"><em>str</em></a>) – location path inside the hdf5</li>
-<li><strong>data</strong> (<em>xarray.DataArray</em>) – the data to save</li>
 </ul>
 </td>
 </tr>
@@ -360,7 +360,7 @@ with the same fields otherwise</p>
 
 <dl class="method">
 <dt id="phicore.io.PhiDataFile.write_xarray">
-<code class="descname">write_xarray</code><span class="sig-paren">(</span><em>data</em>, <em>location='/data/'</em>, <em>chunks=None</em>, <em>backend='pytables'</em>, <em>complib='blosc:lz4'</em>, <em>complevel=0</em>, <em>**args</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/lidyl/phicore/blob/c7bd7ed/phicore/io.py#L221"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.write_xarray" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write_xarray</code><span class="sig-paren">(</span><em>data</em>, <em>location: str = '/data/'</em>, <em>chunks: bool = None</em>, <em>backend: str = 'pytables'</em>, <em>complib: str = 'blosc:lz4'</em>, <em>complevel: int = 0</em>, <em>**args</em><span class="sig-paren">)</span> &#x2192; None<a class="reference external" href="https://github.com/lidyl/phicore/blob/8872997/phicore/io.py#L233"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#phicore.io.PhiDataFile.write_xarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write an xarray to hdf5</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
